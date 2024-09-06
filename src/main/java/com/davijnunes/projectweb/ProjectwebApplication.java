@@ -10,12 +10,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.davijnunes.projectweb.entities.Category;
 import com.davijnunes.projectweb.entities.Product;
 import com.davijnunes.projectweb.repositories.CategoryRepository;
+import com.davijnunes.projectweb.repositories.ProductRepository;
 
 @SpringBootApplication
 public class ProjectwebApplication implements CommandLineRunner {
 	
 	@Autowired
 	private CategoryRepository categoryRepository;
+	
+	@Autowired
+	private ProductRepository productRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ProjectwebApplication.class, args);
@@ -36,6 +40,10 @@ public class ProjectwebApplication implements CommandLineRunner {
 		
 		categoryRepository.save(cat1);
 		categoryRepository.save(cat2);
+		
+		productRepository.save(p1);
+		productRepository.save(p2);
+		
 		
 	}
 
